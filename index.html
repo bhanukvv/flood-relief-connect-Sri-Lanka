@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Relief Connect - Sri Lanka </title>
+    <meta name="description"
+        content="Connect those who need help with those who want to help during floods in Sri Lanka">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assests/css/styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">🇱🇰 Flood Relief Connect</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="help-center.html">Help Center</a></li>
+                <li><a href="my-requests.html">My Requests</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    
+         <section class="hero" style="background-image: url('assests/media/home\ img.png');">
+        <div class="hero-content">
+            <h1 class="hero-title">අපි වෙනුවෙන් අපි</h1>
+            <h2 class="hero-subtitle">If you need help or want to give help, we connect you.</h2>
+            <p class="hero-description">
+                Our platform connects flood victims with volunteers and collection centers in real-time.
+                Mark your location, request help, or offer assistance with just a few clicks.
+            </p>
+            <div class="scroll-indicator">
+                <span>↓</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <h2 class="section-title">Live Relief Map</h2>
+            <p class="section-description">Real-time view of help requests, donors, and collection centers across Sri
+                Lanka</p>
+
+     <!-- Map Legend -->
+            <div class="map-legend">
+                <div class="legend-item">
+                    <span class="legend-dot red"></span>
+                    <span>Need Help</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot green"></span>
+                    <span>Want to Help</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot blue"></span>
+                    <span>Collection Centers</span>
+                </div>
+            </div>
+
+     <!-- Map -->
+            <div id="map"></div>
+        </div>
+    </section>
+
+    <!-- Firebase -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getDatabase } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
+        import { getAuth, signInAnonymously } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+        
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAnx02aNZ-XE0Usu--Pw1yQI8YhvszgHj0",
+            authDomain: "flood-relief-connect.firebaseapp.com",
+            databaseURL: "https://flood-relief-connect-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "flood-relief-connect",
+            storageBucket: "flood-relief-connect.firebasestorage.app",
+            messagingSenderId: "117018317212",
+            appId: "1:117018317212:web:147834e6b1dc3b717d3859",
+            measurementId: "G-6RCESGS8PB"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth(app);
+
+         signInAnonymously(auth)
+        .then(() => {
+            console.log("User signed in anonymously");
+        })
+        .catch(error => {
+            console.error("Anonymous sign-in failed:", error);
+        });
+
+        window.firebaseDB = database;
+        
+    </script>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Custom Script -->
+    <script type="module" src="assests/js/script.js"></script>
+</body>
+
+</html>

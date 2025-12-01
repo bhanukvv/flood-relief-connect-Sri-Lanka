@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - Flood Relief Connect</title>
+    <meta name="description" content="Request help, offer assistance, or register a collection center">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assests/css/styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">🇱🇰 Flood Relief Connect</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="help-center.html" class="active">Help Center</a></li>
+                <li><a href="my-requests.html">My Requests</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Help Center Header -->
+    <section class="page-header">
+        <h1>Help Center</h1>
+        <p>Choose how you want to participate in relief efforts</p>
+    </section>
+
+    <!-- Action Buttons -->
+    <section class="help-actions">
+        <div class="action-cards">
+            <div class="action-card red-card" id="need-help-btn">
+                <div class="action-icon">🆘</div>
+                <h3>Need Help</h3>
+                <p>Request emergency assistance</p>
+            </div>
+            <div class="action-card green-card" id="want-help-btn">
+                <div class="action-icon">🤝</div>
+                <h3>Want to Help</h3>
+                <p>Offer donations or assistance</p>
+            </div>
+            <div class="action-card blue-card" id="collection-center-btn">
+                <div class="action-icon">📍</div>
+                <h3>Collection Center</h3>
+                <p>Register a relief center</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Need Help Form -->
+    <div id="need-help-form" class="form-modal">
+        <div class="form-container">
+            <div class="form-header red-header">
+                <h2>🆘 Need Help</h2>
+                <button class="close-btn" id="close-need-help">&times;</button>
+            </div>
+            <form id="needHelpForm">
+                <div class="form-group">
+                    <label for="need-name">Full Name </label>
+                    <input type="text" id="need-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="need-phone">Phone Number </label>
+                    <input type="tel" id="need-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="need-whatsapp">WhatsApp Number </label>
+                    <input type="tel" id="need-whatsapp" required>
+                </div>
+                <div class="form-group">
+                    <label for="need-details">Help Needed </label>
+                    <textarea id="need-details" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="need-urgency">Urgency Level </label>
+                    <select id="need-urgency" required>
+                        <option value="Emergency">Emergency</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="need-location">Location </label>
+                    <input type="text" id="need-location" readonly required>
+                    <div class="location-buttons">
+                        <button type="button" class="btn-location" id="need-auto-detect">📍
+                            Auto-Detect</button>
+                        <button type="button" class="btn-location" id="need-manual">✏️ Enter
+                            Manually</button>
+                    </div>
+                </div>
+                <input type="hidden" id="need-lat">
+                <input type="hidden" id="need-lng">
+                <button type="submit" class="btn-submit red-btn">Request Help</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Want to Help Form -->
+    <div id="want-help-form" class="form-modal">
+        <div class="form-container">
+            <div class="form-header green-header">
+                <h2>🤝 Want to Help</h2>
+                <button class="close-btn" id="close-want-help">&times;</button>
+            </div>
+            <form id="wantHelpForm">
+                <div class="form-group">
+                    <label for="help-name">Your Name </label>
+                    <input type="text" id="help-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="help-offering">What are you offering? </label>
+                    <textarea id="help-offering" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="help-phone">Phone Number </label>
+                    <input type="tel" id="help-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="help-whatsapp">WhatsApp Number </label>
+                    <input type="tel" id="help-whatsapp" required>
+                </div>
+                <div class="form-group">
+                    <label for="help-location">Location </label>
+                    <input type="text" id="help-location" readonly required>
+                    <div class="location-buttons">
+                        <button type="button" class="btn-location" id="help-auto-detect">📍
+                            Auto-Detect</button>
+                        <button type="button" class="btn-location" id="help-manual">✏️ Enter
+                            Manually</button>
+                    </div>
+                </div>
+                <input type="hidden" id="help-lat">
+                <input type="hidden" id="help-lng">
+                <button type="submit" class="btn-submit green-btn">Submit Offer</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Collection Center Form -->
+    <div id="collection-center-form" class="form-modal">
+        <div class="form-container">
+            <div class="form-header blue-header">
+                <h2>📍 Collection Center</h2>
+                <button class="close-btn" id="close-collection-center">&times;</button>
+            </div>
+            <form id="collectionCenterForm">
+                <div class="form-group">
+                    <label for="center-name">Collection Center Name </label>
+                    <input type="text" id="center-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="center-items">What items are you collecting? </label>
+                    <textarea id="center-items" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="center-phone">Contact Number </label>
+                    <input type="tel" id="center-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="center-whatsapp">WhatsApp Number </label>
+                    <input type="tel" id="center-whatsapp" required>
+                </div>
+                <div class="form-group">
+                    <label for="center-location">Center Location </label>
+                    <input type="text" id="center-location" readonly required>
+                    <div class="location-buttons">
+                        <button type="button" class="btn-location" id="center-auto-detect">📍
+                            Auto-Detect</button>
+                        <button type="button" class="btn-location" id="center-manual">✏️ Enter
+                            Manually</button>
+                    </div>
+                </div>
+                <input type="hidden" id="center-lat">
+                <input type="hidden" id="center-lng">
+                <button type="submit" class="btn-submit blue-btn">Register Center</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getDatabase } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
+        import { getAuth, signInAnonymously } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAnx02aNZ-XE0Usu--Pw1yQI8YhvszgHj0",
+            authDomain: "flood-relief-connect.firebaseapp.com",
+            databaseURL: "https://flood-relief-connect-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "flood-relief-connect",
+            storageBucket: "flood-relief-connect.firebasestorage.app",
+            messagingSenderId: "117018317212",
+            appId: "1:117018317212:web:147834e6b1dc3b717d3859",
+            measurementId: "G-6RCESGS8PB"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth(app);
+
+        signInAnonymously(auth)
+            .then(() => {
+                console.log("User signed in anonymously");
+            })
+            .catch(error => {
+                console.error("Anonymous sign-in failed:", error);
+            });
+
+        window.firebaseDB = database;
+
+    </script>
+
+    <!-- Custom Script -->
+    <script type="module" src="assests/js/script.js"></script>
+</body>
+
+</html>

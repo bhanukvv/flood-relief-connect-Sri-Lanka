@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Flood Relief Connect</title>
+    <meta name="description" content="Learn about our mission to connect flood victims with helpers">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assests/css/styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">🇱🇰 Flood Relief Connect</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="help-center.html">Help Center</a></li>
+                <li><a href="my-requests.html">My Requests</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>About Flood Relief Connect</h1>
+        <p>Connecting communities in times of need</p>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-section">
+        <div class="about-container">
+            <!-- Our Mission -->
+            <div class="about-card">
+                <h2>🎯 Our Mission</h2>
+                <p>
+                    Flood Relief Connect was created to bridge the gap between those affected by floods
+                    and those willing to help. We provide a simple, real-time platform where victims can
+                    request assistance, donors can offer help, and collection centers can coordinate relief efforts.
+                </p>
+                <p>
+                    Our goal is to make disaster relief more efficient, transparent, and accessible to everyone
+                    in Sri Lanka who needs it or wants to contribute.
+                </p>
+            </div>
+
+            <!-- Understanding the Map Pins -->
+            <div class="about-card">
+                <h2>📍 Understanding the Map Pins</h2>
+                <div class="pin-explanations">
+                    <div class="pin-card red-bg">
+                        <div class="pin-header">
+                            <span class="pin-dot red"></span>
+                            <h3>🔴 Need Help</h3>
+                        </div>
+                        <p>
+                            Red pins indicate people who urgently need assistance during floods.
+                            Each pin shows their location, contact details, and what specific help they require.
+                            Click on any red pin to see how you can help.
+                        </p>
+                    </div>
+                    <div class="pin-card green-bg">
+                        <div class="pin-header">
+                            <span class="pin-dot green"></span>
+                            <h3>🟢 Want to Help</h3>
+                        </div>
+                        <p>
+                            Green pins represent generous donors and volunteers offering assistance.
+                            They show what resources, services, or support they can provide.
+                            Connect with them to coordinate relief efforts.
+                        </p>
+                    </div>
+                    <div class="pin-card blue-bg">
+                        <div class="pin-header">
+                            <span class="pin-dot blue"></span>
+                            <h3>🔵 Collection Centers</h3>
+                        </div>
+                        <p>
+                            Blue pins mark official collection centers where you can drop off donations.
+                            Each center lists what items they're accepting and provides contact information
+                            for coordination.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works -->
+            <div class="about-card">
+                <h2>⚙️ How It Works</h2>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Submit Your Request</h3>
+                        <p>
+                            Visit the Help Center and choose whether you need help, want to help,
+                            or are registering a collection center. Fill out a simple form with your details.
+                        </p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Appear on the Map</h3>
+                        <p>
+                            Once submitted, your location appears on the live map as a colored pin.
+                            Your information becomes immediately visible to everyone using the platform.
+                        </p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Connect & Help</h3>
+                        <p>
+                            People can click on your pin to see details, call you directly, message via WhatsApp,
+                            or get directions to your location using Google Maps.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Goal -->
+            <div class="about-card">
+                <h2>💡 Our Goal</h2>
+                <p>
+                    We believe that in times of crisis, quick and direct connections save lives.
+                    By providing a free, open platform that anyone can access, we aim to:
+                </p>
+                <ul class="goal-list">
+                    <li>✓ Speed up response times during flood emergencies</li>
+                    <li>✓ Connect victims directly with nearby helpers</li>
+                    <li>✓ Reduce coordination overhead for relief efforts</li>
+                    <li>✓ Make assistance accessible to everyone, everywhere</li>
+                    <li>✓ Build a stronger, more resilient community</li>
+                </ul>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="about-cta">
+                <h2>Ready to Make a Difference?</h2>
+                <p>Join our community of helpers and those seeking assistance</p>
+                <a href="help-center.html" class="btn-primary">Visit Help Center</a>
+            </div>
+        </div>
+    </section>
+
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getDatabase } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAnx02aNZ-XE0Usu--Pw1yQI8YhvszgHj0",
+            authDomain: "flood-relief-connect.firebaseapp.com",
+            databaseURL: "https://flood-relief-connect-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "flood-relief-connect",
+            storageBucket: "flood-relief-connect.firebasestorage.app",
+            messagingSenderId: "117018317212",
+            appId: "1:117018317212:web:147834e6b1dc3b717d3859",
+            measurementId: "G-6RCESGS8PB"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        window.firebaseDB = database;
+    </script>
+    
+
+    <!-- Custom Script -->
+    <script src="assests/js/script.js"></script>
+</body>
+
+</html>

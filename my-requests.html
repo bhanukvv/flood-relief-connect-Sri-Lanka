@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Requests - Flood Relief Connect</title>
+    <meta name="description" content="View and manage your submitted requests">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assests/css/styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">🇱🇰 Flood Relief Connect</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="help-center.html">Help Center</a></li>
+                <li><a href="my-requests.html" class="active">My Requests</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>My Requests</h1>
+        <p>View and manage your submissions</p>
+    </section>
+
+    <!-- Requests Container -->
+    <section class="requests-section">
+        <div id="requests-container" class="requests-grid">
+            <!-- Requests will be loaded here dynamically -->
+        </div>
+        <div id="no-requests" class="no-requests" style="display: none;">
+            <div class="no-requests-icon">📋</div>
+            <h2>No Requests Found</h2>
+            <p>You haven't submitted any requests yet</p>
+            <a href="help-center.html" class="btn-primary">Go to Help Center</a>
+        </div>
+    </section>
+
+    <!-- Firebase -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getDatabase } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAnx02aNZ-XE0Usu--Pw1yQI8YhvszgHj0",
+            authDomain: "flood-relief-connect.firebaseapp.com",
+            databaseURL: "https://flood-relief-connect-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "flood-relief-connect",
+            storageBucket: "flood-relief-connect.firebasestorage.app",
+            messagingSenderId: "117018317212",
+            appId: "1:117018317212:web:147834e6b1dc3b717d3859",
+            measurementId: "G-6RCESGS8PB"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        window.firebaseDB = database;
+    </script>
+
+    <!-- Custom Script -->
+    <script type="module" src="assests/js/script.js"></script>
+</body>
+
+</html>

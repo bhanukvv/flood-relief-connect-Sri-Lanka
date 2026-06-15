@@ -51,5 +51,15 @@
 - ** Maps API**
 - **Google Fonts (Inter)**
 
+#screenshots -
+<img width="1750" height="910" alt="image" src="https://github.com/user-attachments/assets/e7c6b357-9554-4538-ba71-e9fe87b19a07" />
+<img width="1750" height="910" alt="image" src="https://github.com/user-attachments/assets/2eb33927-76c7-4983-be7b-667d72ec3980" />
+<img width="1750" height="910" alt="image" src="https://github.com/user-attachments/assets/c7bc070e-9a9f-48dc-a6de-60a094c135a0" />
+<img width="1750" height="910" alt="image" src="https://github.com/user-attachments/assets/dbe5f495-4289-4c48-8699-eecb81807307" />
+<img width="1750" height="910" alt="image" src="https://github.com/user-attachments/assets/4babd774-f8cf-4850-a2ae-cec46c00caaa" />
+<img width="1750" height="910" alt="image" src="https://github.com/user-attachments/assets/fe1d4107-d3e9-42a6-8ffd-68980e41c4dc" />
+
+
+
 
 
